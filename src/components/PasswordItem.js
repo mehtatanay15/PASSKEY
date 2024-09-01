@@ -7,26 +7,26 @@ const PasswordItem = (props) => {
   const { deletePassword } = context;
 
   return (
-    <div className="col-md-3 mb-4">
-      <div className="card h-100">
-        <div className="card-body d-flex flex-column">
-          <h5 className="card-title mb-2">{password.name}</h5>
-          <p className="card-text flex-grow-1">
-            {password.password}<br />
+    <div className="col-md-4 mb-3">
+      <div className="card shadow-sm border-0" style={{ minWidth: '300px' }}>
+        <div className="card-body">
+          <h5 className="card-title">{password.name}</h5>
+          <p className="card-text">
+            {password.password}<br/>
             {password.tag}
           </p>
-          <div className="d-flex justify-content-between mt-3">
+          <div className="d-flex justify-content-between">
             <i 
-              className="fa-solid fa-trash text-danger" 
-              style={{ cursor: 'pointer' }} 
-              onClick={() => { 
-                deletePassword(password._id); 
+              className="fa-solid fa-trash mx-2 text-danger" 
+              style={{ cursor: 'pointer' }}
+              onClick={() => {
+                deletePassword(password._id);
                 props.showAlert("Deleted Successfully", "success");
               }}
             ></i>
             <i 
-              className="fa-regular fa-pen-to-square" 
-              style={{ cursor: 'pointer' }} 
+              className="fa-regular fa-pen-to-square mx-2 text-primary"
+              style={{ cursor: 'pointer' }}
               onClick={() => { updatePassword(password); }}
             ></i>
           </div>
